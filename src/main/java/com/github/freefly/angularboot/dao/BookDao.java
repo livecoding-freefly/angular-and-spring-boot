@@ -26,8 +26,12 @@ public class BookDao {
         return book;
     }
 
+    public Book findById(Integer bookId) {
+        return (Book) getCurrentSession().byId(Book.class).load(bookId);
+    }
 
     private Session getCurrentSession() {
         return sessionFactory.getCurrentSession();
     }
+
 }

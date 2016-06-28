@@ -24,4 +24,14 @@ public class BookService {
         return bookDao.getAll();
     }
 
+    @Transactional(readOnly = true)
+    public Book getBookById(Integer bookId) {
+        Book book = bookDao.findById(bookId);
+
+        if (book == null) {
+            throw new IllegalArgumentException();
+        }
+
+        return book;
+    }
 }
