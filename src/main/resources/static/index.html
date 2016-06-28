@@ -11,9 +11,15 @@
 <!--TODO: avoid reload after each changes. -->
 <!--Need config frontend server: SUCCESS -->
 
-<body ng-app="myApp" ng-controller="HomeController">
+<body ng-app="myApp" ng-controller="HomeController" class="container">
 
-    <h1>{{greeting}}</h1>
+    <input type="text" ng-model="newBook.name"><br>
+    <button ng-click="addBook()">Add</button>
+
+
+    <ul>
+        <li ng-repeat="book in books">{{book.name}}</li>
+    </ul>
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
